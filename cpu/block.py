@@ -63,10 +63,10 @@ class Transaction:
         # 记录当前的索引
         cursor = 0
 
-        version = int.from_bytes(raw_bytes[cursor:cursor+4],byteorder="little",signed= True)
+        version = int.from_bytes(raw_bytes[cursor:cursor+4],byteorder="little",signed= False)
         cursor = cursor + 4 
 
-        in_count = int.from_bytes(raw_bytes[cursor:cursor+1],byteorder="little",signed= True)
+        in_count = int.from_bytes(raw_bytes[cursor:cursor+1],byteorder="little",signed= False)
         cursor = cursor + 1
 
         ins:list[TxIn] = []
