@@ -1,1 +1,0 @@
-nvcc -O3 -arch=native --use_fast_math fast_sha256.cu -o fast_sha256
