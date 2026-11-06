@@ -69,6 +69,8 @@ def test_mine_second_block():
 
     header_prefix = version + prev_block + merkle_root + timestamp + bits_bytes
 
+    print(f"头部前缀 (76 字节): {header_prefix.hex()}")
+    
     # 断言 1: 前缀长度必须严格为 76 字节
     assert len(header_prefix) == 76, (
         f"头部前缀长度错误: 应为 76 字节，实为 {len(header_prefix)}"
