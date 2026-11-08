@@ -48,6 +48,9 @@ class TxOut:
     value: int
     script_pubkey: bytes
 
+def txid(self, raw_tx_bytes: bytes) -> str:
+        """计算大端序 TxID 十六进制字符串"""
+        return hashlib.sha256(hashlib.sha256(raw_tx_bytes).digest()).digest()[::-1].hex()
 
 @dataclass
 class Transaction:
@@ -56,6 +59,10 @@ class Transaction:
     outs: list[TxOut]
     locktime: int
     
+    @property
+    def txid(self) -> str:
+        return dsha256(self.raw_bytes)[::-1].hex()
+
     @classmethod
     def parse(cls,raw_bytes: bytes) -> tuple["Transaction",int]:
         # 记录当前的索引

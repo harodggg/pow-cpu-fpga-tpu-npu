@@ -71,4 +71,3 @@ if __name__ == "__main__":
 
 
     print("测试")
-    print(dsha256(b"ll"))

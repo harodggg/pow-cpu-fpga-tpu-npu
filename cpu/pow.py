@@ -11,7 +11,6 @@ def bits_to_target(bits: int) -> int:
 
     return target
 
-
     
 
 
@@ -44,6 +43,7 @@ def mine(header_without_nonce: bytes, bits: int) -> tuple[int,bytes]:
             print(f"挖矿成功！Nonce: {nonce}")
             print(f"区块哈希: {hash_bytes[::-1].hex()}")
             return nonce,full_header
+
 
 
 def test_mine_second_block():
