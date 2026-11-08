@@ -32,9 +32,7 @@ class BlockHeader:
             + self.merkle_root
             + self.timestamp.to_bytes(4, "little")
             + self.bits.to_bytes(4, "little")
-            + self.nonce.to_bytes(4, "little")
-        )
-
+            + self.nonce.to_bytes(4, "little"))
 
 @dataclass
 class TxIn:
